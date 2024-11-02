@@ -17,11 +17,13 @@
     "drizzle-orm": "0.33.0",
     "next": "^14.2.14",
     "next-auth": "5.0.0-beta.20",
+    "pg": "^8.13.1",
     "react": "^18",
     "react-dom": "^18"
   },
   "devDependencies": {
     "@types/node": "^20",
+    "@types/pg": "^8.11.10",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "drizzle-kit": "^0.24.2",
