@@ -7,7 +7,7 @@ export default async function SignIn() {
   const session = await auth();
 
   if (session) {
-    redirect("/");
+    redirect("/dashboard");
   }
 
   return (
