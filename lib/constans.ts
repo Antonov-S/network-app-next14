@@ -20,3 +20,5 @@ export const JOB_TITLES = [
   "Technical Support Engineer",
   "Quality Assurance Engineer"
 ];
+
+export const PEOPLE_PER_PAGE = 20;
