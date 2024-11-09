@@ -15,7 +15,10 @@ export const users = pgTable("user", {
   name: text("name"),
   email: text("email").unique(),
   emailVerified: timestamp("emailVerified", { mode: "date" }),
-  image: text("image")
+  image: text("image"),
+  firstName: text("first_name"),
+  lastName: text("last_name"),
+  jobTitle: text("job_title")
 });
 
 export const accounts = pgTable(
@@ -60,27 +63,6 @@ export const verificationTokens = pgTable(
   verificationToken => ({
     compositePk: primaryKey({
       columns: [verificationToken.identifier, verificationToken.token]
-    })
-  })
-);
-
-export const authenticators = pgTable(
-  "authenticator",
-  {
-    credentialID: text("credentialID").notNull().unique(),
-    userId: text("userId")
-      .notNull()
-      .references(() => users.id, { onDelete: "cascade" }),
-    providerAccountId: text("providerAccountId").notNull(),
-    credentialPublicKey: text("credentialPublicKey").notNull(),
-    counter: integer("counter").notNull(),
-    credentialDeviceType: text("credentialDeviceType").notNull(),
-    credentialBackedUp: boolean("credentialBackedUp").notNull(),
-    transports: text("transports")
-  },
-  authenticator => ({
-    compositePK: primaryKey({
-      columns: [authenticator.userId, authenticator.credentialID]
     })
   })
 );
