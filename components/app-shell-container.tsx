@@ -15,6 +15,8 @@ import {
 } from "@tabler/icons-react";
 import { signOut } from "next-auth/react";
 
+import SearchInput from "./search-input";
+
 export default function AppShellContainer({
   children,
   user
@@ -43,7 +45,9 @@ export default function AppShellContainer({
             Professional network
           </div>
           <div className="flex justify-end gap-5 h-full p-5">
-            <div>Search</div>
+            <div>
+              <SearchInput />
+            </div>
             <div>
               <Menu>
                 <Menu.Target>
