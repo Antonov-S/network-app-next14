@@ -1,5 +1,5 @@
+import { relations } from "drizzle-orm";
 import {
-  boolean,
   timestamp,
   pgTable,
   text,
@@ -66,3 +66,41 @@ export const verificationTokens = pgTable(
     })
   })
 );
+
+export const skills = pgTable("skill", {
+  id: text("id").notNull().primaryKey(),
+  name: text("name").notNull().unique()
+});
+
+export const usersToSkills = pgTable(
+  "users_to_skills",
+  {
+    userId: text("user_id").notNull(),
+    skillId: text("skill_id").notNull(),
+    rating: integer("rating")
+  },
+  us => ({
+    compoundKey: primaryKey({
+      columns: [us.userId, us.skillId]
+    })
+  })
+);
+
+export const usersRelations = relations(users, ({ many }) => ({
+  usersToUsersSkills: many(usersToSkills)
+}));
+
+export const skillsRelations = relations(skills, ({ many }) => ({
+  skillsToUsersSkills: many(usersToSkills)
+}));
+
+export const usersToSkillsRelations = relations(usersToSkills, ({ one }) => ({
+  skill: one(skills, {
+    fields: [usersToSkills.skillId],
+    references: [skills.id]
+  }),
+  user: one(users, {
+    fields: [usersToSkills.userId],
+    references: [users.id]
+  })
+}));
