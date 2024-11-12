@@ -22,3 +22,19 @@ export const JOB_TITLES = [
 ];
 
 export const PEOPLE_PER_PAGE = 20;
+
+export const SKILLS_DATA = [
+  "Next JS",
+  "React",
+  "PostgreSQL",
+  "Node.js",
+  "Express.js",
+  "Vue.js",
+  "Angular",
+  "MongoDB",
+  "GraphQL",
+  "TypeScript",
+  "Tailwind CSS",
+  "Docker",
+  "Firebase"
+];
