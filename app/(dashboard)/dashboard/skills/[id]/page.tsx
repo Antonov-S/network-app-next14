@@ -1,11 +1,11 @@
 import { notFound } from "next/navigation";
+import Link from "next/link";
+import { Avatar } from "@mantine/core";
+import { IconStar } from "@tabler/icons-react";
 
 import SortSkillSelect from "@/components/sort-skill-select";
 import { getSkillById } from "@/lib/utils/get-skill-by-id";
 import { getUsersBySkillId } from "@/lib/utils/get-users-by-skillId";
-import Link from "next/link";
-import { Avatar } from "@mantine/core";
-import { IconStar } from "@tabler/icons-react";
 
 type PageProps = {
   params: { id: string };
