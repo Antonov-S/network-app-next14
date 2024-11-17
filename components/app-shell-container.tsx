@@ -44,7 +44,7 @@ export default function AppShellContainer({
             />
             Professional network
           </div>
-          <div className="flex justify-end gap-5 h-full p-5">
+          <div className="flex justify-end items-center gap-5 h-full p-5">
             <div>
               <SearchInput />
             </div>
