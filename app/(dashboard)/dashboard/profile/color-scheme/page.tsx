@@ -1,7 +1,15 @@
+"use client";
+
+import { useMantineColorScheme, Button, Group } from "@mantine/core";
+
 export default function Page() {
+  const { setColorScheme, clearColorScheme } = useMantineColorScheme();
   return (
-    <div>
-      <h1>Color scheme page</h1>
-    </div>
+    <Group>
+      <Button onClick={() => setColorScheme("light")}>Light</Button>
+      <Button onClick={() => setColorScheme("dark")}>Dark</Button>
+      <Button onClick={() => setColorScheme("auto")}>Auto</Button>
+      <Button onClick={() => clearColorScheme()}>Clear</Button>
+    </Group>
   );
 }
