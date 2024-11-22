@@ -8,7 +8,6 @@ import UserForm from "@/components/user-form";
 
 export default async function Page() {
   const session = await auth();
-
   if (!session) {
     return notFound();
   }
@@ -16,7 +15,6 @@ export default async function Page() {
   const user = await db.query.users.findFirst({
     where: eq(users.id, session.user.id)
   });
-
   if (!user) {
     return notFound();
   }
