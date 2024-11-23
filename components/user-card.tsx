@@ -16,7 +16,7 @@ export default function UserCard({ user }: UserCardProps) {
       </Group>
       <Group justify="center" mt="md" mb="xs">
         <Text fw={500}>
-          {user.firstName} - {user.lastName}
+          {user.firstName} {user.lastName}
         </Text>
       </Group>
       <Group justify="center">
