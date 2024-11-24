@@ -11,7 +11,7 @@ import SubScript from "@tiptap/extension-subscript";
 
 type EditorProps = {
   content: string;
-  onUpdate: Function;
+  onUpdate: (html: string) => void;
 };
 
 export default function Editor({ content, onUpdate }: EditorProps) {

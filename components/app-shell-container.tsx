@@ -1,7 +1,6 @@
 "use client";
 
 import { ReactNode } from "react";
-// import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AppShell, Avatar, Burger, Menu, NavLink } from "@mantine/core";
@@ -16,13 +15,14 @@ import {
 } from "@tabler/icons-react";
 import { signOut } from "next-auth/react";
 import SearchInput from "./search-input";
+import { User } from "@/lib/types";
 
 export default function AppShellContainer({
   children,
   user
 }: {
   children: ReactNode;
-  user: any;
+  user: User;
 }) {
   const [opened, { toggle }] = useDisclosure();
   const pathname = usePathname();
@@ -43,7 +43,6 @@ export default function AppShellContainer({
               size="sm"
             />
             Professional network
-            {/* <Image src="/logo.svg" alt="Logo" width={52} height={52} /> */}
           </div>
           <div className="flex justify-end items-center gap-5 h-full p-5">
             <div>

@@ -49,7 +49,7 @@ export default async function Page({ params }: PageProps) {
             >
               <Avatar src={person.user.image} size="md" />
               <div>
-                {person.user.firstName} {person.user.lastName}{" "}
+                {person.user.firstName} {person.user.lastName} -{" "}
                 {person.user.jobTitle}
               </div>
               <div className="flex-grow text-right">

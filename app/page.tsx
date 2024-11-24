@@ -1,4 +1,3 @@
-import LoginBtn from "@/components/login-btn";
 import { IconBriefcase } from "@tabler/icons-react";
 import { Roboto_Mono } from "next/font/google";
 import Link from "next/link";
@@ -12,7 +11,6 @@ export default function Home() {
       <div className={`${roboto.className} font-bold`}>
         Professional Network
       </div>
-      {/* <LoginBtn /> */}
       <Link href="/signin">Sign In</Link>
     </div>
   );

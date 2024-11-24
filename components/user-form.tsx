@@ -14,7 +14,6 @@ type UserFormProps = {
 };
 
 export default function UserForm({ user }: UserFormProps) {
-  if (!user) return;
   const initialState = { errors: {} };
 
   const [state, dispach] = useFormState(updateUser, initialState);

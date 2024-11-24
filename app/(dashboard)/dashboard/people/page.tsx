@@ -2,7 +2,6 @@ import PaginationContainer from "@/components/pagination-container";
 import UserCard from "@/components/user-card";
 import { getUsers } from "@/lib/utils/get-users";
 import Link from "next/link";
-import { resolve } from "path";
 
 type PageParams = {
   searchParams: { page: number };
@@ -10,7 +9,6 @@ type PageParams = {
 
 export default async function Page({ searchParams }: PageParams) {
   const page = searchParams.page || 1;
-  //   await new Promise(resolve => setTimeout(resolve, 2000));
 
   const res = await getUsers(page);
   return (

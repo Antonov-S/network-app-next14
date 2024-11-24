@@ -13,7 +13,6 @@ export default function SortSkillSelect({ value }: SortSkillSelectProps) {
   const { replace } = useRouter();
 
   function handleChange(value: string | null, option: ComboboxItem) {
-    // console.log(value, option);
     const params = new URLSearchParams(searchParams);
     if (!value) {
       return;

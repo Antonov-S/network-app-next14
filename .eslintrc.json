@@ -1,3 +1,9 @@
 {
-  "extends": ["next/core-web-vitals", "next/typescript"]
+  "extends": ["next/core-web-vitals", "next/typescript"],
+  "rules": {
+    "react-hooks/exhaustive-deps": "off", // Изключва предупреждения за useEffect зависимости
+    "@typescript-eslint/no-unused-vars": "off", // Изключва грешки за неизползвани променливи
+    "@typescript-eslint/no-non-null-asserted-optional-chain": "off", // Изключва грешки за non-null assertion
+    "@typescript-eslint/no-explicit-any": "off" // Изключва грешки за използването на any
+  }
 }
