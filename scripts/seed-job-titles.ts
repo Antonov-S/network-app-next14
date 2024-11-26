@@ -4,7 +4,7 @@ import { JOB_TITLES } from "@/lib/constans";
 import { db, pool } from "@/lib/db";
 import { users } from "@/lib/schema";
 
-async function main() {
+export default async function main() {
   const res = await db.query.users.findMany();
   for (let user of res) {
     const randomIdx = Math.floor(Math.random() * JOB_TITLES.length);
@@ -14,7 +14,9 @@ async function main() {
       .set({ jobTitle: JOB_TITLES[randomIdx] })
       .where(eq(users.id, user.id));
   }
-  pool.end();
 }
 
-main();
+if (require.main === module) {
+  main();
+  pool.end();
+}
