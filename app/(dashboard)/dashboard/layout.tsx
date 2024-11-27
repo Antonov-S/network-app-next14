@@ -19,7 +19,7 @@ export default async function Layout({ children }: { children: ReactNode }) {
     where: eq(users.id, session.user.id)
   });
   if (!currentUser) {
-    return notFound();
+    redirect("/signin");
   }
 
   return (
