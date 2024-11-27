@@ -8,7 +8,9 @@ export default function SigninBtn() {
   return (
     <Button
       leftSection={<IconBrandGithub />}
-      onClick={() => signIn("github", { redirect: false, callbackUrl: "/" })}
+      onClick={() =>
+        signIn("github", { redirect: false, callbackUrl: "/dashboard" })
+      }
     >
       Sign In With GitHub
     </Button>
