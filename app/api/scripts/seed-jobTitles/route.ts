@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 
 import seedJobTitles from "@/scripts/seed-job-titles";
 
-// export const dynamic = "force-dynamic";
+export const dynamic = "force-dynamic";
 
 export async function GET() {
   await seedJobTitles();
