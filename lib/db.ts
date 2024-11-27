@@ -6,8 +6,8 @@ import * as schema from "./schema";
 export const pool = new Pool({
   connectionString: config.POSTGRES_URL,
   max: 20,
-  idleTimeoutMillis: 30000,
-  connectionTimeoutMillis: 2000
+  idleTimeoutMillis: 60000,
+  connectionTimeoutMillis: 5000
 });
 
 export const db = drizzle(pool, { schema, logger: true });
